@@ -38,19 +38,19 @@ const MyModal = ({ setShowModal, filterDataFun }) => {
           <input
             type="text"
             placeholder="Filter movie based on Year"
-            className="border-2 border-purple-900 m-3 w-[500px] p-1 rounded-lg"
+            className="border-2 border-lotus-950 m-3 w-[500px] p-1 rounded-lg outline-none"
             value={year}
             onChange={handleYearSearch}
           />
           <input
             type="text"
             placeholder="Filter movie based on Type"
-            className="border-2 border-purple-900 m-3 w-[500px] p-1 rounded-lg"
+            className="border-2 border-lotus-950 m-3 w-[500px] p-1 rounded-lg outline-none"
             value={type}
             onChange={handleTypeSearch}
           />
           <button
-            className="relative left-3 top-2 bg-purple-900 rounded-lg font-serif  text-white p-1 text-xl hover:bg-purple-950 "
+            className="relative left-3 top-2 bg-lotus-900 rounded-lg font-serif  text-white p-1 text-xl hover:bg-lotus-950 "
             onClick={() => {
               setShowModal(false);
               filterDataFun(year, type);
