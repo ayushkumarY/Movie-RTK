@@ -2,7 +2,7 @@ import React from "react";
 
 function Footer() {
   return (
-    <div className="flex flex-col items-center bg-gradient-to-r from-lotus-950 via-lotus-900 to-lotus-950 text-white p-8">
+    <div className="flex flex-col items-center bg-gradient-to-r from-lotus-950 via-lotus-800 to-lotus-950 text-white p-8">
       <div className="flex border-b-8 h-3 w-80 rounded-xl border-red-600"></div>
       <div className="flex w-full justify-around text-lg">
         <div className=" w-[300px] p-2 flex flex-col">
