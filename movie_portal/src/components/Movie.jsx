@@ -4,6 +4,7 @@ import { fetchmovies } from "../redux/movieSlicer";
 import Cart from "./Cart";
 import MyModal from "./MyModal";
 import { X } from "lucide-react";
+import Table from "./Table";
 
 function Movie() {
   const [storemovie, setStoreMovie] = useState([]);
@@ -14,6 +15,7 @@ function Movie() {
   const [showtabseries, setShowTabSeries] = useState(false);
   const [showtabyear, setshowtabYear] = useState(false);
   const [New, setNew] = useState("");
+  const [view, setView] = useState("cart");
 
   const dispatch = useDispatch();
   const data = useSelector((state) => state.movie);
@@ -90,6 +92,14 @@ function Movie() {
     }
   };
   // filterData from movies ends here
+
+  function changeView() {
+    if (view === "cart") {
+      setView("table");
+    } else {
+      setView("cart");
+    }
+  }
 
   return (
     <div className="bg-gradient-to-r from-lotus-950 via-lotus-800 to-lotus-950 flex flex-col">
@@ -174,14 +184,40 @@ function Movie() {
       {/* extra button ends here */}
 
       {/* Displaying cart starts here */}
-      <div className="flex flex-wrap mx-28 justify-evenly pt-7 text-white">
-        {data.isLoading ? (
-          <h1>Loading....</h1>
+      <div>
+        {view === "cart" ? (
+          <div className="flex flex-wrap mx-28 justify-evenly pt-7 text-white">
+            {data.isLoading ? (
+              <h1>Loading....</h1>
+            ) : (
+              storemovie.map((value, index) => (
+                <Cart value={value} key={index} />
+              ))
+            )}
+          </div>
         ) : (
-          storemovie.map((value, index) => <Cart value={value} key={index} />)
+          <div className="flex justify-center items-center">
+            <div className="mx-40">
+              <Table userData={storemovie} />
+            </div>
+          </div>
         )}
       </div>
       {/* Displaying cart ends here */}
+
+      {/* Button starts here */}
+      <div className="flex items-center justify-center">
+        <button
+          className="bg-white p-2 m-7 text-black w-[10rem] hover:text-white hover:bg-black font-mono font-bold rounded-3xl outline-none"
+          onClick={changeView}
+        >
+          <p className="text-xl font-bold">
+            {view === "cart" ? "Table" : "Cart"} View
+          </p>
+        </button>
+      </div>
+
+      {/* Button ends here */}
     </div>
   );
 }
