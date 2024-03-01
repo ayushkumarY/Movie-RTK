@@ -3,7 +3,7 @@ import React from "react";
 function Footer() {
   return (
     <div className="flex flex-col items-center bg-gradient-to-r from-lotus-950 via-lotus-800 to-lotus-950 text-white p-8">
-      <div className="flex border-b-8 h-3 w-80 rounded-xl border-red-600"></div>
+      <div className="flex border-b-8 h-3 max-w-[20rem] w-[100%] rounded-xl border-red-600"></div>
       <div className="flex w-full justify-around text-lg">
         <div className=" w-[300px] p-2 flex flex-col">
           <h1 className="font-bold text-center text-2xl mt-3">M O V I E S</h1>
@@ -18,7 +18,8 @@ function Footer() {
             <i className="fa-brands fa-linkedin hover:text-black hover:cursor-pointer"></i>
           </div>
         </div>
-        <div className="flex flex-col w-[300px]  items-center justify-center   ">
+
+        <div className="md:flex md:flex-col w-[300px] md:items-center md:justify-center hidden ">
           <h1 className="font-bold  hover:cursor-pointer">Quicks Links</h1>
           <ul className="flex flex-col">
             <li className=" hover:cursor-pointer">Movies</li>
@@ -28,7 +29,7 @@ function Footer() {
           </ul>
         </div>
 
-        <div className="flex flex-col w-[300px]  items-center justify-center   ">
+        <div className="md:flex md:flex-col w-[300px] md:items-center md:justify-center hidden">
           <h1 className="font-bold  hover:cursor-pointer">Trending</h1>
           <ul className="flex flex-col hover:cursor-pointer">
             <li className=" hover:cursor-pointer">Movie1</li>
@@ -38,7 +39,7 @@ function Footer() {
           </ul>
         </div>
 
-        <div className="flex flex-col w-[300px]  items-center justify-center   ">
+        <div className="md:flex md:flex-col w-[300px] md:items-center md:justify-center hidden  ">
           <h1 className="font-bold hover:cursor-pointer">New Releases</h1>
           <ul className="flex flex-col hover:cursor-pointer">
             <li className=" hover:cursor-pointer">Movie1</li>

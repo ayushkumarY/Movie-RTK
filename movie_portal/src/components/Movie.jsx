@@ -28,9 +28,9 @@ function Movie() {
 
   useEffect(() => {
     // Update storemovie when data changes
-    if (data && data.data && data.data.Search) {
-      setStoreMovie(data.data.Search);
-      setFilterData(data.data.Search);
+    if (data?.data?.Search) {
+      setStoreMovie(data?.data?.Search);
+      setFilterData(data?.data?.Search);
     }
   }, [data]); // Add data to dependency array
 
@@ -103,21 +103,22 @@ function Movie() {
 
   return (
     <div className="bg-gradient-to-r from-lotus-950 via-lotus-800 to-lotus-950 flex flex-col">
-      <div className="flex flex-row items-center justify-around w-full mt-7">
+      <div className="flex flex-col md:flex-row md:items-center md:justify-around justify-between items-start mt-7 h-[4rem] w-full px-5">
         {/* Search bar starts here */}
         <input
           type="text"
           placeholder="Movie Name"
           value={searchQuery}
           onChange={handlesearch}
-          className="text-black rounded-sm h-[35px] w-[700px] px-2 focus:outline-none"
+          className="text-black rounded-sm md:h-[35px] w-full focus:outline-none px-2 md:w-[50rem]"
         />
+
         {/* Search bar starts here */}
 
         {/* Popup starts here */}
         <div>
           <button
-            className="bg-white text-black font-bold m-1 p-[7px] font-mono rounded-sm h-9 hover:bg-black hover:text-white"
+            className="bg-white text-black md:font-bold md:w-[8rem] w-[7rem] font-mono rounded-sm md:h-9 hover:bg-black hover:text-white "
             onClick={() => {
               setShowModal(true);
             }}
@@ -184,9 +185,9 @@ function Movie() {
       {/* extra button ends here */}
 
       {/* Displaying cart starts here */}
-      <div>
+      <div className="px-4 ">
         {view === "cart" ? (
-          <div className="flex flex-wrap mx-28 justify-evenly pt-7 text-white">
+          <div className="flex flex-wrap md:mx-28 justify-evenly pt-7 text-white">
             {data.isLoading ? (
               <h1>Loading....</h1>
             ) : (
@@ -197,8 +198,9 @@ function Movie() {
           </div>
         ) : (
           <div className="flex justify-center items-center">
-            <div className="mx-40">
-              <Table userData={storemovie} />
+            {/* can also use "max-w-[50rem] min-w-[10rem]" in css of this element */}
+            <div className="max-w-[50rem] w-[100%]">
+              <Table userData={storemovie}/>
             </div>
           </div>
         )}
@@ -208,10 +210,10 @@ function Movie() {
       {/* Button starts here */}
       <div className="flex items-center justify-center">
         <button
-          className="bg-white p-2 m-7 text-black w-[10rem] hover:text-white hover:bg-black font-mono font-bold rounded-3xl outline-none"
+          className="bg-white p-2 m-7 text-black md:w-[10rem] hover:text-white hover:bg-black font-mono md:font-bold rounded-3xl outline-none"
           onClick={changeView}
         >
-          <p className="text-xl font-bold">
+          <p className="md:text-xl font-bold">
             {view === "cart" ? "Table" : "Cart"} View
           </p>
         </button>

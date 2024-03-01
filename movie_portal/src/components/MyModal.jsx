@@ -24,33 +24,39 @@ const MyModal = ({ setShowModal, filterDataFun }) => {
 
   return (
     <>
-      <div className="fixed left-0 right-0 bottom-0 top-0 backdrop-blur-sm bg-black bg-opacity-30 z-10">
-        <div className="fixed w-[37rem] bg-gradient-to-b from-white to-lotus-50 rounded-lg top-[30%] left-[30%] text-2xl p-7 pb-10">
+      <div className="fixed flex items-center justify-center left-0 right-0 bottom-0 top-0 backdrop-blur-sm bg-black bg-opacity-30 ">
+        <div
+          className="flex flex-col justify-between bg-gradient-to-b from-white to-lotus-50 rounded-lg  
+         text-2xl w-[30rem] py-2 px-2 mx-2"
+        >
           <button
             onClick={() => {
               setShowModal(false);
             }}
-            className="relative left-[500px] font-bold bottom-3 hover:bg-red-500 p-1 rounded-[50%] "
+            className="mb-2 w-full flex items-center justify-end "
           >
-            <X />
+            <div className="rounded-[50%] hover:bg-red-500">
+              <X />
+            </div>
           </button>
-          <br />
-          <input
-            type="text"
-            placeholder="Filter movie based on Year"
-            className="border-2 border-lotus-950 m-3 w-[500px] p-1 rounded-lg outline-none"
-            value={year}
-            onChange={handleYearSearch}
-          />
-          <input
-            type="text"
-            placeholder="Filter movie based on Type"
-            className="border-2 border-lotus-950 m-3 w-[500px] p-1 rounded-lg outline-none"
-            value={type}
-            onChange={handleTypeSearch}
-          />
+          <div className="flex flex-col items-center">
+            <input
+              type="text"
+              placeholder="Filter movie based on Year"
+              className="border-2 border-lotus-950 mb-2 p-1 rounded-lg outline-none w-[100%]"
+              value={year}
+              onChange={handleYearSearch}
+            />
+            <input
+              type="text"
+              placeholder="Filter movie based on Type"
+              className="border-2 border-lotus-950 mb-2 p-1 rounded-lg outline-none w-[100%]"
+              value={type}
+              onChange={handleTypeSearch}
+            />
+          </div>
           <button
-            className="relative left-3 top-2 bg-lotus-900 rounded-lg font-serif  text-white p-1 text-xl hover:bg-lotus-950 "
+            className=" bg-lotus-900 rounded-lg font-serif p-1 w-20 text-white text-xl hover:bg-lotus-950 "
             onClick={() => {
               setShowModal(false);
               filterDataFun(year, type);

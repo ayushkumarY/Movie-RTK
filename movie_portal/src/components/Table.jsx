@@ -28,7 +28,6 @@ function Table({ userData }) {
       {/* pagination fixedHeader fixedHeaderScrollHeight="400px" selectableRows
       selectableRowsHighlight highlightOnHover */}
       <DataTable
-        className="mt-7 "
         columns={columns}
         data={userData}
         pagination

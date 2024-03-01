@@ -2,7 +2,7 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
 export const fetchmovies = createAsyncThunk("fetchTodo", async () => {
   const data = await fetch(
-    "http://www.omdbapi.com/?i=tt3896198&apikey=fdb5f1a2&s=2012"
+    "https://www.omdbapi.com/?i=tt3896198&apikey=fdb5f1a2&s=2012"
   );
   return data.json();
 });
