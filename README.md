@@ -8,7 +8,7 @@
   
 </p>
 
-<h4 style="margin-auto">Screenshots</h2>
+<h4 >Screenshots</h2>
 
 ![image](https://github.com/ayushkumarY/Movie-RTK/assets/109496307/70a14ea0-a39e-47ee-b099-6394882bd60b)
 ![Screenshot_1-3-2024_163553_localhost](https://github.com/ayushkumarY/Movie-RTK/assets/109496307/c39ed2f9-e96a-4acf-aa32-93e2d8e60c90)
