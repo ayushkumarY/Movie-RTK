@@ -1,10 +1,13 @@
 <h1>Movie Listing Website using React Js + Redux Toolkit + Tailwind CSS (Responsive)</h1>
-<p>This Movie Listing Website has been created using React,Redux Toolkit and Tailwind CSS.
-  The site displays various movies that are fetched through an API using Redux Toolkit.This is completely a Responsive Website which can be used in Desktop and Mobile as well.
-  On the website, I added a table button that displays movies in a table format using react-data-table-component.
-  Additionally, I included a filter button that opens a tab with two fields to filter movies by year and type. 
-  On the home page, there is also a search field where you can search for movies by name.
-  Finally, I added a sign-in and login tab that includes validation through Formik and Yup.
+<p>I recently developed a Movie Listing Website using React, Redux Toolkit and Tailwind CSS. The website displays a variety of movies that are fetched through an API using Redux Toolkit. This website is fully responsive and can be accessed on both desktop and mobile platforms. 
+
+
+
+I have included several features on the website, such as a table button that displays movies in a table format using react-data-table-component, and a filter button that opens a tab with two fields to filter movies by year and type. Additionally, there is a search field on the homepage that allows users to search for movies by name. 
+
+
+
+Lastly, I have added a sign-in and login tab that includes validation through Formik and Yup to ensure security.
   
 </p>
 
